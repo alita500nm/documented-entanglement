@@ -46,7 +46,7 @@
             width: 100%;
             height: 70vh;
             perspective: 56.25vh;
-            z-index: -2;
+            z-index: 0;
         }
 
         .grid-lines {
@@ -64,7 +64,6 @@
             background-repeat: repeat;
             transform-origin: 100% 0 0;
             animation: gridMove 30s linear infinite;
-            z-index: -2;
         }
 
         @keyframes gridMove {
@@ -80,12 +79,12 @@
             bottom: 0;
             background: linear-gradient(180deg, var(--dunkel) 25%, transparent),
                         radial-gradient(circle farthest-corner at 50% 0%, transparent 50%, var(--dunkel) 90%);
-            z-index: -1;
+            z-index: 1;
         }
 
         /* ===== CRT EFFECT ===== */
         .crt {
-            position: fixed;
+            position: absolute;
             left: 0;
             top: 0;
             right: 0;
@@ -878,11 +877,6 @@
         .about-link:hover {
             border-color: var(--türkis);
             opacity: 0.8;
-        }
-
-        /* Lift #about above CRT overlay so images render without scanlines */
-        #about {
-            z-index: 1000;
         }
 
         /* About cat photo (bottom, full width) */
